@@ -11,6 +11,7 @@ pipeline {
             steps {
                 sh 'echo "This is execute step"'
                 sh 'java HelloWorld'
+                sh 'exit 1'
             }
         }
         stage('Deploy') { 
