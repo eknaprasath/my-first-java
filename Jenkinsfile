@@ -14,6 +14,18 @@ pipeline {
                 sh 'exit 0'
             }
         }
+        stage('Parallel Task') {
+            steps {
+                parallel(
+                       a: {
+                          echo "This is branch a"
+                         },
+                       b: {
+                          echo "This is branch b"
+                         }
+                      )
+               } 
+        }
         stage('Deploy') { 
             steps {
                sh 'sleep 4'
